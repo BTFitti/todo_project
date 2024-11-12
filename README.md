@@ -8,4 +8,4 @@ and visualize them to keep a organized routine.
 - [ReactJs](https://react.dev/)
 - JavaScript
 ## ❔ How to use it 
-- You can access the project link which is already builded at> 
+- You can access the project link which is already builded at: [To-do List](https://todo-project-btfitti.vercel.app/)
