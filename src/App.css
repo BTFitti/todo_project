@@ -5,7 +5,6 @@
   
 }
 html{
-  
   background-color: #F5F5F5;
 }
 .app {
@@ -124,4 +123,16 @@ h1 {
 }
 .btnDelete:hover {
   background-color: #690b086e;
+}
+@media (max-width: 412px){
+  h1{
+    font-size: 20px;
+  }
+  .inputTask{
+    width: 20vh;
+  }
+  .btnRegister{
+    width: 20vh;
+    font-size: 15px;
+  }
 }
