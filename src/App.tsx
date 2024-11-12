@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import "./App.css";
 
 function App() {
+
+
   const inputRef = useRef<HTMLInputElement>(null);
   const firstRender = useRef(true);
 
@@ -24,6 +26,13 @@ function App() {
     }
     localStorage.setItem("@todoList", JSON.stringify(tasks));
   }, [tasks]);
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) =>{
+    if(event.key === 'Enter'){
+      addTask();
+    }
+  }
+  
 
   function addTask() {
     if (!input) {
@@ -63,6 +72,7 @@ function App() {
   }
 
   return (
+    
     <div className="app">
       <h1>Lista de Tarefas</h1>
       <input
@@ -70,9 +80,10 @@ function App() {
         placeholder="Digite uma tarefa"
         value={input}
         onChange={(e) => setInput(e.target.value)}
+        onKeyDown={handleKeyDown}
         ref={inputRef}
       />
-      <button className="btnRegister" onClick={addTask}>{editedTask.enabled ? "Atualizar tarefa" : "Adicionar tarefa"}</button>
+      <button className="btnRegister" id="submit" onClick={addTask}>{editedTask.enabled ? "Atualizar tarefa" : "Adicionar tarefa"}</button>
 
       {tasks.map((item) => (
         <ul key={item}>
@@ -90,6 +101,7 @@ function App() {
         </ul>
       ))}
     </div>
+    
   );
 }
 
