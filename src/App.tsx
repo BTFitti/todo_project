@@ -74,7 +74,7 @@ function App() {
       />
       <button className="btnRegister" onClick={addTask}>{editedTask.enabled ? "Atualizar tarefa" : "Adicionar tarefa"}</button>
 
-      {tasks.map((item, index) => (
+      {tasks.map((item) => (
         <ul key={item}>
           <li className="itens">
             {item}
