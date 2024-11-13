@@ -84,7 +84,7 @@ function App() {
         onKeyDown={handleKeyDown}
         ref={inputRef}
       />
-      <button className="btnRegister" id="submit" onClick={addTask}>{editedTask.enabled ? "Atualizar tarefa" : "Adicionar tarefa"}</button>
+      <button className="btnRegister" onClick={addTask}>{editedTask.enabled ? "Atualizar tarefa" : "Adicionar tarefa"}</button>
 
       {tasks.map((item) => (
         <ul key={item}>
