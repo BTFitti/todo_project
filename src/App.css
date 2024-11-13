@@ -43,6 +43,8 @@ html{
     #6935a5,
     #ffffff
   );
+  z-index: 0;
+  position: relative;
   font-family: "Doto", sans-serif;
   font-style: italic;
   text-transform: uppercase;
@@ -55,7 +57,58 @@ html{
   border-radius: 20px;
   cursor: pointer;
 }
+.btnRegister::after{
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+.btnRegister::before{
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #60cfc0, #f48fb1, #7e57c2, #2196f3,
+    #26c6da, #43a047, #53dde2, #6935a5,
+    #ffffff
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height:  calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 25s linear infinite;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+}
+@keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 100% 0;}
+  100% {background-position: 0 0;}
+}
+.btnRegister:hover::before {
+  opacity: 1;
+}
 
+.btnRegister:active:after {
+  background: transparent;
+}
+
+.btnRegister:active {
+  color: #000;
+  font-weight: bold;
+}
+.btnRegister:hover{
+  color: white;
+  transition: 1s;
+}
 h1 {
   font-size: 40px;
   font-family: "Doto", sans-serif;
