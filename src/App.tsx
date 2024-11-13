@@ -52,6 +52,7 @@ function App() {
     setTasks(removeTask);
   }
   function editTask(item: string) {
+    inputRef.current?.focus();
     setInput(item);
 
     setEditedTask({
