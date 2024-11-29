@@ -194,4 +194,9 @@ h1 {
     width: 90%;
     font-size: 25px;
   }
+  .btnDelete {
+    
+    font-size: 80%;
+    
+  }
 }
